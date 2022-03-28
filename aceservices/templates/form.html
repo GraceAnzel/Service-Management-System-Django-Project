@@ -1,0 +1,76 @@
+{% load crispy_forms_tags %}
+<! DOCTYPE html>
+<html>
+{% load static %}
+<link rel="stylesheet"  href="{%  static  'contact1.css'  %}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form</title>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
+    </head>
+    <body>
+    <!--<b>{{ service.name }} service form</b> -->
+        <div class="wrapper">
+            <div class="contact">
+                <div class="contact_info">
+                    <h2>Info</h2>
+                    <hr>
+
+
+                    <div class="info">
+                        <label for="">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                        </label>
+                        <span><a href="#">91-9988776655</a></span>
+                    </div>
+
+                    <div class="info">
+                        <label for="">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </label>
+                        <span><a href="#">aceservices@gmail.com</a></span>
+                    </div>
+
+                    <div class="social_icon">
+                        <p>Get your service
+                        by filling your Address
+
+                        </p>
+
+                    </div>
+
+                </div>
+                <div class="contact_form">
+                    <h2>Fill-out Form</h2>
+                    <hr>
+                    <form  method="POST">
+
+                      {% csrf_token %}
+                        <label>Fullname</label>
+                       {{ form.fullname }}
+                        <label>Email</label>
+                       {{ form.email }}
+                        <label>phone number</label>
+                       {{ form.phoneno }}
+                        <label>Appliance</label>
+                       {{ form.appliance }}
+                        <br><label>Address</label>
+                       {{ form.address }}
+                        <label>Pincode</label>
+                       {{ form.pincode }}
+
+
+
+
+
+                        <input type="submit" value="Proceed">
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

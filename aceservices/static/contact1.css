@@ -1,0 +1,213 @@
+* {
+    margin:0;
+    padding:0;
+    list-style:none;
+    text-decoration:none;
+}
+body,input,textarea{
+    font-family: Poppins,sans-serif;
+}
+.wrapper{
+    position:relative;
+    min-height:100vh;
+    overflow-x:hidden;
+    width:100%;
+    box-sizing:border-box;
+}
+.contact{
+    position:relative;
+    width:100%;
+
+}
+
+.contact_info {
+    position:relative;
+    width:100%;
+    background:#12475f;
+    color:#fafafa;
+    padding:20px;
+    font-size:15px;
+    box-sizing:border-box;
+}
+
+.contact_info h2 {
+    font-size:20px;
+}
+.contact_info hr{
+    position:relative;
+    height:4px;
+    width:60px;
+    margin:30px 0;
+    background:#fafafa;
+    border:none;
+}
+.info{
+    position:relative;
+    width:100%;
+    display:flex;
+    margin-bottom:20px;
+}
+.info label{
+    position:relative;
+    font-size:13px;
+    padding:5px;
+    background:#1abc9c;
+    border-radius:50%;
+    height:20px;
+    width:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-right:20px;
+}
+.info a{
+    color:#fafafa;
+}
+.info a:hover{
+    text-decoration:underline;
+}
+.social_icon {
+    position:relative;
+    margin:80px 0;
+}
+.social_icon p{
+    margin-bottom:20px;
+}
+.social-icon a{
+    position:relative;
+    color:#fafafa;
+    height:20px;
+    width:20px;
+    font-size:14px;
+    margin-right:20px;
+    padding:5px;
+    border:2px solid #fafafa;
+    border-radius:50%;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    transition:all .5s;
+}
+.social-icon a:hover{
+    background:#1abc9c;
+}
+.contact-form{
+    position:relative;
+    padding:40px;
+    box-sizing:border-box;
+}
+.contact-form h2{
+    font-size:20px;
+    color:#12475f;
+    margin:20px 0;
+}
+.contact_form hr{
+    position:relative;
+    width:60px;
+    height:4px;
+    background:#1abc9c;
+    border:none;
+    margin-bottom:30px;
+
+}
+.contact_form form{
+    position:relative;
+}
+.contact_form form input[type="text"] {
+    display:block;
+    width:280px;
+    margin-bottom:20px;
+    padding:10px;
+    font-size:14px;
+    font-weight:600;
+    background:#12475f;
+    border:none;
+    color:#fafafa;
+    outline:none;
+}
+.contact_form form textarea{
+    display:block;
+    width:280px;
+    height:100px;
+    margin-bottom:20px;
+    padding:10px;
+    font-size:14px;
+    font-weight:600;
+    background:#12475f;
+    border:none;
+    color:#fafafa;
+    outline:none;
+}
+.contact_form form input[type="submit"]{
+    display:block;
+    padding:10px 30px;
+    font-size:14px;
+    font-weight:600;
+    border:none;
+    background:#1abc9c;
+    color:#12475f;
+    cursor:pointer;
+    transition:all .3s;
+}
+.contact_form form input[type="submit"]:hover{
+    box-shadow:2px 2px #12475f;
+}
+@media only screen and (min-width:768px){
+    .contact_form{
+        width:80%;
+        margin:0px auto;
+    }
+    .contact_form form input[type="text"],
+    .contact_form form textarea{
+        width:500px;
+
+    }
+}
+
+@media only screen and (min-width:1000px){
+    .wrapper{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:#12475f;
+    }
+    .wrapper::before{
+        content:'';
+        position:absolute;
+        width:50%;
+        height:100%;
+        background:#1abc9c;
+        left:0;
+        top:0;
+    }
+    .contact{
+        position:relative;
+        background:#fafafa;
+        box-shadow:5px 5px #1abc9c;
+        padding:10px;
+        width:70%;
+        height:75vh;
+    }
+    .contact_info{
+        position:absolute;
+        width:300px;
+        height:auto;
+        margin-left:-10%;
+        top:35px;
+        box-shadow:5px 5px #1abc9c;
+    }
+    .social_icon{
+        margin:40px 0;
+
+    }
+    .contact_form{
+        float:right;
+        width:auto;
+    }
+    .contact_form form input[type="text"],
+    .contact_form form textarea{
+        background:transparent;
+        border-bottom:3px solid #12475f;
+        color:#12475f;
+    }
+}

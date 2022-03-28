@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <tile></tile>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
+        <link rel="stylesheet" type="text/css" href="register.css">
+
+
+    </head>
+    <body>
+    <style>
+  @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+
+{
+	box-sizing: border-box;
+}
+
+nav {
+  background-color: #e28692;
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+nav a {
+  color: #fff;
+  position: relative;
+  margin-left: 30px;
+  text-decoration: none;
+}
+
+nav a::after {
+  content: '';
+  border-bottom: 3px solid #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+  opacity: 0;
+  height: 100%;
+  width: 90%;
+}
+
+nav a:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
+		<nav id="navbar">
+			<div style = "position:relative; left:-900px; top:3px; color: #0c0b0b; font-family: "Times New Roman", Times, serif; font-size: 90px;
+
+
+			">
+			<b>ACE SERVICES</b>
+			  </div>
+
+			<a href="/"><b>Home</b></a>
+			<a href="{% url 'AboutUs' %}">About</a>
+			<a href="{% url 'Contact' %}">Contact</a>
+			<a href="{% url 'login' %}">Login</a>
+			<a href="{% url 'reg' %}">Register</a>
+
+		  </nav>
+    </head>
+
+
+
+      <div class="containerl">
+        <div class="headerl">
+            <h2>Login</h2>
+
+        </div>
+        <form class="form" id="form" method="POST" >
+            {% csrf_token %}
+            <div class="form-control">
+                <label>Username</label>
+                <input type="text" name="uname" id="username" placeholder="Enter your fullname" autocomplete="off">
+                <i  class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error Msg</small>
+            </div>
+
+
+            <div class="form-control">
+                <label>Password</label>
+                <input type="password" name="pwd" id="password" placeholder="Enter your password" autocomplete="off">
+                <i  class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error Msg</small>
+            </div>
+
+            <input type="submit" value="Login" class="btn" name="">
+             {% for message in messages %}
+
+                    <div class="alert alert-success">
+                        <a class="close" href="#" data-dismiss="alert">×</a>
+
+                        {{ message }}
+
+                    </div>
+            {% endfor %}
+
+        </form>
+      </div>
+
+
+
+
+    </body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Mulish:wght@300');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --myfont:'Mulish',sans-serif;
+    --my-btn-font:'Montserrat',sans-serif;
+    --lg-lightcolor:linear-gradient(to left,rgba(247, 120, 204, 0.6),rgba(196, 231, 129, 0.6));
+    --lg-color:linear-gradient(to left,#7cc7fa,#e7f186);
+}
+body{
+    background-image:var(--lg-lightcolor),url("bg6.jpg");
+    background-size:100%;
+    background-repeat:no-repeat;
+    font-family:var(--myfont);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    width:100vw;
+}
+.containerl{
+    background-color:#fff;
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    box-shadow:0 2.8px 2.2px rgba(0,0,0,0.034),0 6.7px 5.3px rgba(0,0,0,0.048),0 12.7px 8.3px;
+    overflow:hidden;
+    width:calc(100vw - 65vw);
+    max-width:100%;
+    /*top:10%;*/
+}
+.headerl{
+    background:var(--lg-color);
+    padding:30px 0;
+}
+.headerl h2{
+    color:#222;
+    font-family:var(--my-btn-font);
+    font-size:24px;
+    text-transform:uppercase;
+    text-align:center;
+}
+.form{
+    padding:40px;
+}
+.form-control{
+    margin-bottom:30px;
+    position:relative;
+}
+.form-control label{
+    display:inline-block;
+    margin-bottom:5px;
+}
+.form-control input{
+    width:100%;
+    border:2px solid #f0f0f0;
+    border-radius:5px;
+    display:block;
+    font-family:var(--myfont);
+    font-size:14px;
+    padding:12px;
+}
+.form-control input:focus{
+    outline:0;
+    border-color:#777;
+}
+.form-control.success input{
+    border-color:#2ecc71;
+}
+.form-control.error input{
+    border-color:#e74c3c;
+}
+.form-control i{
+    position:absolute;
+    right:12px;
+    top:38px;
+    visibility:hidden;
+}
+.form-control.success i.fa-check-circle{
+    color:#2ecc71;
+    visibility:visible;
+}
+.form-control.error i.fa-exclamation-circle{
+    color:#e74c3c;
+    visibility:visible;
+}
+.form-control small{
+    color:#e74c3c;
+    position:absolute;
+    left:0;
+    visibility:hidden;
+}
+.form-control.error small{
+    visibility:visible;
+}
+.form .btn{
+    background:var(--lg-color);
+    border-radius:6px;
+    border:none;
+    outline:none;
+    color:#fff;
+    display:block;
+    font-family:var(--my-btn-font);
+    font-size:16px;
+    padding:15px 0;
+    margin-top:20px;
+    width:100%;
+    font-weight:bold;
+    text-transform:uppercase;
+    transition:all 1s ease;
+}
+.form .btn:hover{
+    background:linear-gradient(to right,#7cc7fa,#e7f186);
+}
+@media(max-width:998px){
+    .container{
+        width:calc(100vw-35vw);
+        max-width:100%;
+    }
+}
+
+
+
+</style>
+
+
+</html>

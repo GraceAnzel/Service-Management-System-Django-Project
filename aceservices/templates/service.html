@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="service1" method="">
+<div class="container-fluid mt-3">
+    <div class="row">
+            <div class="row mx-auto">
+                {% for service in services %}
+
+                <div class="card mx-auto mb-3" style="width: 18rem;">
+                    <img src="{{service.image.url}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-title"><b>{{service.name}}</b></p>
+
+
+                        <p class="card-text">{{service.description}}</p>
+                        <a href="{% url 'service1' %}" class="btn btn-light border btn-sm">Get Service for ₹
+1000</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+    </div>
+</div>
+    </form>
+
+
+{% endblock %}

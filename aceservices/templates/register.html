@@ -1,0 +1,155 @@
+
+<html>
+{% load static %}
+<link rel="stylesheet"  href="{%  static  'register1.css'  %}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <tile></tile>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
+
+        <style>
+  @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+
+{
+	box-sizing: border-box;
+}
+
+nav {
+  background-color: #e28692;
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+nav a {
+  color: #fff;
+  position: relative;
+  margin-left: 30px;
+  text-decoration: none;
+}
+
+nav a::after {
+  content: '';
+  border-bottom: 3px solid #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+  opacity: 0;
+  height: 100%;
+  width: 90%;
+}
+
+nav a:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
+		<nav id="navbar">
+			<div style = "position:relative; left:-900px; top:3px; color: #0c0b0b; font-family: "Times New Roman", Times, serif; font-size: 90px;
+
+
+			">
+			<b>ACE SERVICES</b>
+			  </div>
+
+			<a href="/"><b>Home</b></a>
+			<a href="about">About</a>
+			<a href="contact">Contact</a>
+			<a href="login">Login</a>
+			<a href="register">Register</a>
+
+		  </nav>
+    </head>
+
+
+
+    <body>
+      <div class="containerl">
+        <div class="headerl">
+            <h2>REGISTER</h2>
+
+        </div>
+        <form  onsubmit="return validation()" class="form" method="POST">
+			{% csrf_token %}
+
+
+				<div class="form-control">
+					<label>Username</label>
+					{{ form.username }}
+					<span id="user" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-control">
+					<label>Email</label>
+					{{ form.email }}
+
+					<span id="emails" class="text-danger font-weight-bold"> </span>
+				</div>
+
+			<div class="form-control">
+					<label > Mobile Number: </label>
+					{{ form.phoneno }}
+					<span id="phoneno" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-control">
+					<label>Password</label>
+					{{ form.password }}
+					<span id="passwords" class="text-danger font-weight-bold"> </span>
+					</div>
+
+
+				<div class="form-control">
+					<label > Confirm Password </label>
+					{{ form.cpassword }}
+					<span id="cfrmpass" class="text-danger font-weight-bold"> </span>
+				</div>
+
+
+
+
+
+
+
+<input type="submit" value="Submit" class="btn" name="">
+
+			</form><br><br>
+
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+    </body>
+
+</html>
+
